@@ -36,8 +36,8 @@ RUN \
     /etc/nginx/fastcgi_params && \
   echo 'fastcgi_param  SERVER_NAME        $host; # Send HTTP_HOST as SERVER_NAME. If HTTP_HOST is blank, send the value of server_name from nginx (default is `_`)' >> \
     /etc/nginx/fastcgi_params && \
- # rm -f /etc/nginx/conf.d/stream.conf && \
- #rm -f /etc/nginx/http.d/default.conf && \
+  rm -f /etc/nginx/conf.d/stream.conf && \
+  rm -f /etc/nginx/http.d/default.conf && \
   echo "**** guarantee correct php version is symlinked ****" && \
   if [ "$(readlink /usr/bin/php)" != "php82" ]; then \
     rm -rf /usr/bin/php && \
